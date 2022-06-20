@@ -1776,7 +1776,7 @@ void GraphController::groupTrailNodes(GroupType groupType)
 		std::shared_ptr<DummyEdge> originEdge = std::make_shared<DummyEdge>();
 		originEdge->targetId = groupNode->tokenId;
 
-		std::vector<Id> hiddenEdgeIds;
+		/// unused std::vector<Id> hiddenEdgeIds;
 
 		for (TrailNode& node: group)
 		{
