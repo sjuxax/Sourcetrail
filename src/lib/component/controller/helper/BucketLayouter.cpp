@@ -103,12 +103,12 @@ void Bucket::preLayout(Vec2i viewSize, bool addVerticalSplit, bool forceVertical
 	m_width = x + width;
 	m_height -= GraphViewStyle::s_gridCellPadding;
 
-	for (size_t i = 0; i < nodesInCol.size(); i++)
+	for (size_t ii = 0; ii < nodesInCol.size(); ii++)
 	{
-		for (DummyNode* node: nodesInCol[i])
+		for (DummyNode* node: nodesInCol[ii])
 		{
-			node->columnSize.x = colWidths[i];
-			node->columnSize.y = colHeights[i];
+			node->columnSize.x = colWidths[ii];
+			node->columnSize.y = colHeights[ii];
 		}
 	}
 
