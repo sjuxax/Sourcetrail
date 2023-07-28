@@ -17,14 +17,14 @@ void CombinedIndexerCommandProvider::addProvider(std::shared_ptr<IndexerCommandP
 
 std::vector<FilePath> CombinedIndexerCommandProvider::getAllSourceFilePaths() const
 {
-	size_t size = 0;
+	size_t mysize = 0;
 	for (const std::shared_ptr<IndexerCommandProvider>& provider: m_providers)
 	{
-		size += provider->size();
+		mysize += provider->size();
 	}
 
 	std::vector<FilePath> paths;
-	paths.reserve(size);
+	paths.reserve(mysize);
 
 	for (const std::shared_ptr<IndexerCommandProvider>& provider: m_providers)
 	{
@@ -63,14 +63,14 @@ std::shared_ptr<IndexerCommand> CombinedIndexerCommandProvider::consumeCommandFo
 
 std::vector<std::shared_ptr<IndexerCommand>> CombinedIndexerCommandProvider::consumeAllCommands()
 {
-	size_t size = 0;
+	size_t mysize = 0;
 	for (const std::shared_ptr<IndexerCommandProvider>& provider: m_providers)
 	{
-		size += provider->size();
+		mysize += provider->size();
 	}
 
 	std::vector<std::shared_ptr<IndexerCommand>> commands;
-	commands.reserve(size);
+	commands.reserve(mysize);
 
 	for (const std::shared_ptr<IndexerCommandProvider>& provider: m_providers)
 	{
