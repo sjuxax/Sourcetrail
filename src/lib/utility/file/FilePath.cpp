@@ -269,11 +269,11 @@ std::vector<FilePath> FilePath::expandEnvironmentVariables() const
 	environmentVariablePathSeparator = ';';
 #endif
 
-	for (const std::string& str: utility::splitToVector(text, environmentVariablePathSeparator))
+	for (const std::string& mystr: utility::splitToVector(text, environmentVariablePathSeparator))
 	{
-		if (str.size())
+		if (mystr.size())
 		{
-			paths.push_back(FilePath(str));
+			paths.push_back(FilePath(mystr));
 		}
 	}
 
