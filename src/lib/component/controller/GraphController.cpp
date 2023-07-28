@@ -2628,7 +2628,7 @@ void GraphController::createLegendGraph()
 			Edge* edge = addEdge(Edge::EDGE_BUNDLED_EDGES, typeA, typeB);
 			std::shared_ptr<TokenComponentBundledEdges> bundledEdgesComp =
 				std::make_shared<TokenComponentBundledEdges>();
-			for (size_t i = 0; i < 10; i++)
+			for (size_t ii = 0; ii < 10; ii++)
 			{
 				bundledEdgesComp->addBundledEdgesId(++id, true);
 			}
