@@ -1357,7 +1357,7 @@ std::shared_ptr<DummyNode> GraphController::bundleNodesMatching(
 	const std::wstring& name)
 {
 	std::vector<std::list<std::shared_ptr<DummyNode>>::iterator> matchedNodes;
-	for (std::list<std::shared_ptr<DummyNode>>::iterator it = nodes.begin(); it != nodes.end(); it++)
+	for (std::list<std::shared_ptr<DummyNode>>::iterator it = nodes.begin(); it != nodes.end(); ++it)
 	{
 		if (matcher(it->get()))
 		{
@@ -1751,7 +1751,7 @@ void GraphController::groupTrailNodes(GroupType groupType)
 			}
 			else
 			{
-				it++;
+				++it;
 			}
 		}
 
