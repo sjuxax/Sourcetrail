@@ -57,7 +57,7 @@ bool SourceGroupSettingsWithJavaMaven::equals(const SourceGroupSettingsBase* oth
 		dynamic_cast<const SourceGroupSettingsWithJavaMaven*>(other);
 
 	return (
-		otherPtr && m_mavenProjectFilePath == otherPtr->m_mavenProjectFilePath && otherPtr &&
+		otherPtr && m_mavenProjectFilePath == otherPtr->m_mavenProjectFilePath &&
 		m_mavenSettingsFilePath == otherPtr->m_mavenSettingsFilePath &&
 		m_shouldIndexMavenTests == otherPtr->m_shouldIndexMavenTests);
 }
