@@ -1357,7 +1357,7 @@ std::shared_ptr<DummyNode> GraphController::bundleNodesMatching(
 	const std::wstring& name)
 {
 	std::vector<std::list<std::shared_ptr<DummyNode>>::iterator> matchedNodes;
-	for (std::list<std::shared_ptr<DummyNode>>::iterator it = nodes.begin(); it != nodes.end(); it++)
+	for (std::list<std::shared_ptr<DummyNode>>::iterator it = nodes.begin(); it != nodes.end(); ++it)
 	{
 		if (matcher(it->get()))
 		{
@@ -1751,7 +1751,7 @@ void GraphController::groupTrailNodes(GroupType groupType)
 			}
 			else
 			{
-				it++;
+				++it;
 			}
 		}
 
@@ -1776,7 +1776,7 @@ void GraphController::groupTrailNodes(GroupType groupType)
 		std::shared_ptr<DummyEdge> originEdge = std::make_shared<DummyEdge>();
 		originEdge->targetId = groupNode->tokenId;
 
-		std::vector<Id> hiddenEdgeIds;
+		/// unused std::vector<Id> hiddenEdgeIds;
 
 		for (TrailNode& node: group)
 		{
@@ -2628,7 +2628,7 @@ void GraphController::createLegendGraph()
 			Edge* edge = addEdge(Edge::EDGE_BUNDLED_EDGES, typeA, typeB);
 			std::shared_ptr<TokenComponentBundledEdges> bundledEdgesComp =
 				std::make_shared<TokenComponentBundledEdges>();
-			for (size_t i = 0; i < 10; i++)
+			for (size_t ii = 0; ii < 10; ii++)
 			{
 				bundledEdgesComp->addBundledEdgesId(++id, true);
 			}

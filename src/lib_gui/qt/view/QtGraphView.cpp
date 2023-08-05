@@ -217,14 +217,14 @@ QtGraphView::QtGraphView(ViewLayout* viewLayout)
 		m_groupWidget = new QWidget(widget);
 		m_groupWidget->setGeometry(38, 8, 54, 26);
 
-		QHBoxLayout* layout = new QHBoxLayout();
-		layout->setContentsMargins(0, 0, 0, 0);
-		layout->setSpacing(2);
+		QHBoxLayout* mylayout = new QHBoxLayout();
+		mylayout->setContentsMargins(0, 0, 0, 0);
+		mylayout->setSpacing(2);
 
-		layout->addWidget(m_groupNamespaceButton);
-		layout->addWidget(m_groupFileButton);
+		mylayout->addWidget(m_groupNamespaceButton);
+		mylayout->addWidget(m_groupFileButton);
 
-		m_groupWidget->setLayout(layout);
+		m_groupWidget->setLayout(mylayout);
 	}
 }
 

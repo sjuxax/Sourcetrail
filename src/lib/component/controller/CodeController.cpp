@@ -1438,15 +1438,15 @@ bool CodeController::addAllSourceLocations()
 			}
 			else
 			{
-				std::shared_ptr<SourceLocationFile> file =
+				std::shared_ptr<SourceLocationFile> myfile =
 					m_storageAccess->getSourceLocationsForLinesInFile(
 						snippet.locationFile->getFilePath(),
 						snippet.startLineNumber,
 						snippet.endLineNumber);
-				if (file)
+				if (myfile)
 				{
-					file->copySourceLocations(snippet.locationFile);
-					snippet.locationFile = file;
+					myfile->copySourceLocations(snippet.locationFile);
+					snippet.locationFile = myfile;
 				}
 			}
 

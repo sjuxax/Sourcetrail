@@ -269,11 +269,11 @@ std::vector<FilePath> FilePath::expandEnvironmentVariables() const
 	environmentVariablePathSeparator = ';';
 #endif
 
-	for (const std::string& str: utility::splitToVector(text, environmentVariablePathSeparator))
+	for (const std::string& mystr: utility::splitToVector(text, environmentVariablePathSeparator))
 	{
-		if (str.size())
+		if (mystr.size())
 		{
-			paths.push_back(FilePath(str));
+			paths.push_back(FilePath(mystr));
 		}
 	}
 
@@ -293,7 +293,7 @@ FilePath& FilePath::makeRelativeTo(const FilePath& other)
 	boost::filesystem::path::const_iterator itA = a.begin();
 	boost::filesystem::path::const_iterator itB = b.begin();
 
-	while (*itA == *itB && itA != a.end() && itB != b.end())
+	while (itA != a.end() && itB != b.end() && *itA == *itB)
 	{
 		itA++;
 		itB++;

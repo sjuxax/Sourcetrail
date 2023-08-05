@@ -305,26 +305,26 @@ void Application::handleMessage(MessageLoadProject* message)
 		}
 		catch (std::exception& e)
 		{
-			const std::wstring message = L"Failed to load project at \"" +
+			const std::wstring mymessage = L"Failed to load project at \"" +
 				projectSettingsFilePath.wstr() + L"\" with exception: " +
 				utility::decodeFromUtf8(e.what());
-			LOG_ERROR(message);
-			MessageStatus(message, true).dispatch();
+			LOG_ERROR(mymessage);
+			MessageStatus(mymessage, true).dispatch();
 		}
 		catch (CppSQLite3Exception& e)
 		{
-			const std::wstring message = L"Failed to load project at \"" +
+			const std::wstring mymessage = L"Failed to load project at \"" +
 				projectSettingsFilePath.wstr() + L"\" with sqlite exception: " +
 				utility::decodeFromUtf8(e.errorMessage());
-			LOG_ERROR(message);
-			MessageStatus(message, true).dispatch();
+			LOG_ERROR(mymessage);
+			MessageStatus(mymessage, true).dispatch();
 		}
 		catch (...)
 		{
-			const std::wstring message = L"Failed to load project at \"" +
+			const std::wstring mymessage = L"Failed to load project at \"" +
 				projectSettingsFilePath.wstr() + L"\" with unknown exception.";
-			LOG_ERROR(message);
-			MessageStatus(message, true).dispatch();
+			LOG_ERROR(mymessage);
+			MessageStatus(mymessage, true).dispatch();
 		}
 
 		if (message->refreshMode != REFRESH_NONE)

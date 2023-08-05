@@ -476,7 +476,7 @@ std::wstring breakSignature(
 		while (true)
 		{
 			size_t parenCount = 0;
-			bool split = false;
+			bool bsplit = false;
 			for (size_t i = 0; i < paramPart.size(); i++)
 			{
 				const wchar_t c = paramPart[i];
@@ -484,7 +484,7 @@ std::wstring breakSignature(
 				{
 					paramLines.push_back(paramPart.substr(0, i + 1));
 					paramPart = paramPart.substr(i + 2);
-					split = true;
+					bsplit = true;
 					break;
 				}
 				else if (c == L'<' || c == L'(')
@@ -497,7 +497,7 @@ std::wstring breakSignature(
 				}
 			}
 
-			if (!split)
+			if (!bsplit)
 			{
 				paramLines.push_back(paramPart);
 				break;

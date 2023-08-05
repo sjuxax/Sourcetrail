@@ -1859,7 +1859,7 @@ std::vector<ErrorInfo> PersistentStorage::getErrorsForFileLimited(
 
 	std::unordered_map<Id, std::set<Id>> includedMap = getFileIdToIncludedFileIdMap();
 	std::set<Id> fileIdsToProcess = includedMap[getFileNodeId(filePath)];
-	std::set<Id> processedFileIds;
+	/// unused std::set<Id> processedFileIds;
 
 	while (fileIdsToProcess.size())
 	{
